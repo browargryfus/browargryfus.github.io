@@ -76,29 +76,40 @@ animation:rainbow 2s infinite;
 100% {color: #FF00FF;}
 }
 
-.gryf {
-    width: 200px;
-    height: 600px;
-    filter: drop-shadow( 0px 1px 1px rgba(0, 0, 0, .7));
-    text-shadow: 0px 1px 1px #4d4d4d;
+.shadow {
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+.premiere {
+    margin-bottom: 40px;
+    font-size:20px;
+    font-weight:'bold';
+}
+h3 a:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #FF00FF; 
 }
 </style>
-
 </head>
 <body>
 <div style="overflow:hidden;">
 <header class="header" id="header"><!--header-start-->
     <div class="container">
-        <figure class="logo animated fadeInDown delay-07s">
-            <a href="#"><img src="img/logo.svg" alt=""></a> 
+        <figure class=" logo animated fadeInDown delay-07s">
+            <a href="#"><img class="shadow" src="img/logo.svg" alt=""></a> 
         </figure>   
         <!-- <h1 class="animated fadeInDown delay-07s">Browar Gryfus</h1> -->
         <ul class="we-create animated fadeInUp delay-1s">
             <li>Jesteśmy grupą pasjonatów tworzących wyjątkowe piwa.</li>
         </ul>
-        <h3 class="color animated fadeInUp delay-1s" 
-            style="margin-bottom: 40px">
-            <span class="rainbow">11 maja premiera naszego browaru.</span></h3>
+        <h3 class="premiere shadow color animated fadeInUp delay-1s">
+            <span class="rainbow">11 maja premiera naszego browaru.</span>
+            <br />
+            <a href="https://goo.gl/maps/W4VBTKARwZC2">
+              <i class="fa fa-map-marker rainbow"></i> 
+              <span class="rainbow">Pub Słody.</span>
+            </a>
+        </h3>
         <a class="link animated fadeInUp delay-1s" 
             style="background-color: #ff00ff"
             href="https://www.facebook.com/BrowarGryfus">Więcej </a>
