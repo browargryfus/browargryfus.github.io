@@ -16,6 +16,7 @@
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
 <link href="css/animate.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 
 <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
 
@@ -92,7 +93,7 @@ h3 a:hover {
 </style>
 </head>
 <body>
-<div style="overflow:hidden; height: 100%">
+<div style="height: 100%">
 <header class="header" id="header"><!--header-start-->
     <div class="container">
         <figure class=" logo animated fadeInDown delay-07s">
@@ -122,9 +123,40 @@ h3 a:hover {
 </div>
 </header><!--header-end-->
 
-
+<div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-block cc-bottom cc-color" style="color: rgb(255, 255, 255);background-color: rgb(0, 0, 0, 0.7);">
+  <!--googleoff: all-->
+  <span id="cookieconsent:desc" class="cc-message">Strona używa cookies. Korzystanie z witryny bez zmiany ustawień dotyczących cookies oznacza, że będą one zamieszczane w Państwa urządzeniu końcowym. Możecie Państwo dokonać w każdej chwili zmiany ustawień dotyczących cookies w Waszej przeglądarce.<a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="https://cookiesandyou.com" target="_blank"> Więcej</a></span><div class="cc-compliance">
+    <a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss" onclick="$('.cc-banner').css('display', 'none'); setCookie('cc','true')">OK</a>
+  </div>
+  <!--googleon: all-->
+</div>
 
 <script type="text/javascript">
+  function setCookie(name,value,days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days*24*60*60*1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+  function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+  }
+  function eraseCookie(name) {   
+      document.cookie = name+'=; Max-Age=-99999999;';  
+  }
+    if(getCookie('cc')) {
+      $('.cc-banner').css('display', 'none');
+    }
     $(document).ready(function(e) {
         $('#test').scrollToFixed();
         $('.res-nav_click').click(function(){
