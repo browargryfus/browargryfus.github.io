@@ -54,13 +54,17 @@ a, a:hover, a:active{ outline:0px !important}
 
 /* Primary Styles
 ---------------------------------*/
+html {
+	height: 100%;
+}
 body {
-	background: url(../img/background.jpg) left top repeat;
+	background-color: black;
 	font-family: 'Open Sans', sans-serif;
 	font-size:14px;
 	font-weight:normal;
 	color:#888888;
 	margin:0;
+	height: 100%;
 }
 h2{
 	font-size:34px;
@@ -99,7 +103,8 @@ p{
 .header{
 	text-align:center;
 	background:url(../img/background.jpg) left top repeat;
-	padding:280px 0;
+	padding:50px 0;
+	height: 100%;
 }
 .logo{
 	/*width:130px;*/
